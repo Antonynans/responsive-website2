@@ -5,7 +5,7 @@ import { Heading, Img, ImgWrapper, InfoColumn, InfoRow, InfoSec, Subtitle, TextW
 
 const InfoSection = ({ lightBg, imgStart, lightTopLine, lightTextDesc, buttonLabel, description, headLine,topLine,lightText, primary, img, alt, start }) => {
     return (
-        <div>
+        <>
             <InfoSec lightBg={lightBg}>
                 <Container>
                     <InfoRow imgStart={imgStart}>
@@ -29,7 +29,7 @@ const InfoSection = ({ lightBg, imgStart, lightTopLine, lightTextDesc, buttonLab
                     </InfoRow>
                 </Container>
             </InfoSec>
-        </div>
+        </>
     )
 }
 
