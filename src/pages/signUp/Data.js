@@ -30,9 +30,9 @@ export const homeObjOne = {
   
   export const homeObjThree = {
     lightBg: true,
-    lightText: false,
-    lightTopLine: true,
-    lightTextDesc: false,
+    lightText: true,
+    lightTopLine: false,
+    lightTextDesc: true,
     topLine: 'Easy Setup',
     headLine: 'Super fast and simple onboarding process',
     description:
