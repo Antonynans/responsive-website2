@@ -6,6 +6,7 @@ import ScrollToTop from './components/ScrollToTop';
 import Products from './pages/products/Products';
 import SignUp from './pages/signUp/SignUp';
 import Services from './pages/services/Services';
+import CreateAccount from './pages/signUp/CreateAccount';
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
           <Route path='/sign-up' component={SignUp} />
         </Switch>
         <Footer />
+        <CreateAccount />
 
     </BrowserRouter>
   );
