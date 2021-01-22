@@ -1,28 +1,30 @@
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import GlobalStyle from './globalStyles/GlobalStyles';
 import Home from './pages/homePage/Home';
-import { Footer, Navbar } from './components';
+import { Footer } from './components';
 import ScrollToTop from './components/ScrollToTop';
 import Products from './pages/products/Products';
 import SignUp from './pages/signUp/SignUp';
 import Services from './pages/services/Services';
-import CreateAccount from './pages/signUp/CreateAccount';
-
+import CreateAccount from './pages/createAccount/CreateAccount';
+import Navbar from './components/Navbar/Navbar';
 
 function App() {
   return (
     <BrowserRouter>
         <GlobalStyle />
         <ScrollToTop />
-        <Navbar />
+        {/* <Navbar /> */}
         <Switch>
           <Route path='/' exact component={Home} />
-          <Route path='/services' component={Services} />
-          <Route path='/products' component={Products} />
-          <Route path='/sign-up' component={SignUp} />
+          <Route path='/services' exact component={Services} />
+          <Route path='/products' exact component={Products} />
+          <Route path='/sign-up' exact component={SignUp} />
+          <CreateAccount />
+
         </Switch>
-        <Footer />
-        <CreateAccount />
+        {/* <Footer /> */}
+        {/* <CreateAccount /> */}
 
     </BrowserRouter>
   );

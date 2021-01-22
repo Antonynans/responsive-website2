@@ -1,12 +1,14 @@
 import React from 'react';
-import { InfoSection } from '../../components';
+import { Footer, InfoSection, Navbar } from '../../components';
 import { homeObjOne, homeObjTwo } from './Data';
 
 function Products() {
   return (
     <>
+      <Navbar />
       <InfoSection {...homeObjOne} />
       <InfoSection {...homeObjTwo} />
+      <Footer />
     </>
   );
 }
