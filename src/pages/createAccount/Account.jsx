@@ -1,12 +1,12 @@
 import styled from 'styled-components'
 import { Container } from '../../globalStyles/GlobalStyles'
 import { FaMagento } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 
 export const AccountContainer = styled.div`
     display: flex;
     background-color: #242424;
-    /* justify-content: space-between; */
     min-height: 100vh;
 
     /* ${Container} */
@@ -14,11 +14,19 @@ export const AccountContainer = styled.div`
 
 export const FormContainer = styled.div`
     background-color: white;
-    height: 100%;
+    height: auto;
+    width: 400px;
     padding: 5%;
     padding-top: 3%;
     border-radius: 3px;
     margin-top: 10%;
+    margin-left: 30%;
+    position: fixed;
+    
+        @media screen and (max-width: 768px){
+            width: auto;
+            margin: 20% 2% 2% 2%;
+        }
 
 `;
 
@@ -35,12 +43,25 @@ export const FormText = styled.p`
 `
 
 export const NavIcon = styled(FaMagento)`
-    margin-left: 2%;
-    font-size: 2rem;
+    margin-right: .5rem;
+   
+`;
+
+export const NavLogo = styled(Link)`
     color: #fff;
+    justify-self: flex-start;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 2rem;
+    display: flex;
     align-items: center;
-
-
+    margin: 5% 0 0 40%;
+    height: 0%;
+    
+        @media screen and (max-width: 768px){
+            margin: 5% 0 0 25%;
+        }
+    
 `;
 
 export const NoteInput = styled.input`
@@ -50,4 +71,19 @@ export const NoteInput = styled.input`
     border-radius: 5px;
     border: 2px solid gray;
     box-sizing: border-box;
+`
+
+export const NoteButton = styled.button`
+    width: 100%;
+    height: 3.5rem;
+    font-size: 16px;    
+    color: #bb2323;
+    background-color: gray;
+    border-radius: 5px;
+
+    cursor: pointer;
+
+    &hover{
+        background-color: #A54302; 
+    }
 `

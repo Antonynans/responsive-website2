@@ -1,26 +1,75 @@
-import React from 'react'
-import { AccountContainer, Form, FormContainer, FormText, NavIcon, NoteInput } from './Account'
+import React, { useState } from 'react'
+import { AccountContainer, Form, FormContainer, FormText, NavIcon, NavLogo, NoteButton, NoteInput } from './Account'
 
 
-export default function CreateAccount() {
+export default function CreateAccount({ history }) {
+    const [values, setValues] = useState({
+        firstName: '',
+        lastName: '',
+        email: '',
+        password: '',
+        confirmPassword: ''
+    });
+
+    const handleChange = (e) => {
+        setValues({
+            ...setValues,
+            [e.target.id]: e.target.value
+        });
+    }
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        history.push('/login');
+    }
+    
     return (
         <AccountContainer>
-            <div>
+            <NavLogo to='/'>
                 <NavIcon />
-            </div>
+                ULTRA
+            </NavLogo>
             <FormContainer>
                 <FormText>create new account</FormText>
                 <Form>
-                    
+                    {console.log(values)}
                     <NoteInput 
-                    label='First Name'
+                    placeholder='First Name'
                     id='firstName'
+                    type='text'
+                    onChange={handleChange}
+                    value={values.firstName}
                     />
                     <NoteInput 
-                    label='Last Name'
+                    placeholder='Last Name'
                     id='lastName'
                     type='text'
+                    value={values.lastName}
+                    onChange={handleChange}
                     />
+                    <NoteInput 
+                    placeholder='Email'
+                    id='email'
+                    type='text'
+                    value={values.email}
+                    />
+                    <NoteInput 
+                    placeholder='Password'
+                    id='password'
+                    type='password'
+                    onChange={handleChange}
+                    value={values.password}
+                    />
+                     <NoteInput 
+                    placeholder='Confirm Password'
+                    id='confirmPassword'
+                    type='password'
+                    value={values.confirmPassword}
+                    onChange={handleChange}
+                    />
+                    <NoteButton onClick={handleSubmit}>
+                        Create Account
+                    </NoteButton>
                 </Form>
             </FormContainer>
         </AccountContainer>
