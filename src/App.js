@@ -8,12 +8,14 @@ import SignUp from './pages/signUp/SignUp';
 import Services from './pages/services/Services';
 import CreateAccount from './pages/createAccount/CreateAccount';
 import Navbar from './components/Navbar/Navbar';
+import ScrollArrow from './pages/ScrollToTop';
 
 function App() {
   return (
     <BrowserRouter>
         <GlobalStyle />
         <ScrollToTop />
+        <ScrollArrow />
         {/* <Navbar /> */}
         <Switch>
           <Route path='/' exact component={Home} />

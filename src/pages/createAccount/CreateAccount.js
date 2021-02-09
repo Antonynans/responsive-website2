@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { AccountContainer, Form, FormContainer, FormText, NavIcon, NavLogo, NoteButton, NoteInput } from './Account'
 
 
-export default function CreateAccount({ history }) {
+export default function CreateAccount({history}) {
     const [values, setValues] = useState({
         firstName: '',
         lastName: '',
@@ -20,8 +20,15 @@ export default function CreateAccount({ history }) {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        history.push('/login');
+        const email = values.email.length > 0;
+        const password = values.password.length > 0;
+        const confirmPassword = values.confirmPassword.length > 0;
+        if (password === confirmPassword) {
+            alert('Welcome')
+            // history.push("/login");
+        }
     }
+    
     
     return (
         <AccountContainer>
