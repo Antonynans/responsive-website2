@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
-import { AccountContainer, Form, FormContainer, FormText, NavIcon, NavLogo, NoteButton, NoteInput } from './Account'
+import { AccountContainer, Form, FormContainer, FormText, NavIcon, NavLogo, NoteButton, NoteInput, FooterLink } from './Account'
 
 
 export default function CreateAccount({history}) {
-    const [values, setValues] = useState({
+    const [data, setData] = useState({
         firstName: '',
         lastName: '',
         email: '',
@@ -12,22 +12,23 @@ export default function CreateAccount({history}) {
     });
 
     const handleChange = (e) => {
-        setValues({
-            ...setValues,
+        setData({
+            ...data,
             [e.target.id]: e.target.value
         });
     }
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        const email = values.email.length > 0;
-        const password = values.password.length > 0;
-        const confirmPassword = values.confirmPassword.length > 0;
-        if (password === confirmPassword) {
-            alert('Welcome')
-            // history.push("/login");
-        }
-    }
+    // const handleSubmit = (e) => {
+    //     e.preventDefault();
+    //     history.push("/login");
+
+    //     const email = data.email.length > 0;
+    //     const password = data.password.length > 0;
+    //     const confirmPassword = data.confirmPassword.length > 0;
+    //     if (password === confirmPassword) {
+    //         alert('Welcome')
+    //     }
+    // }
     
     
     return (
@@ -37,47 +38,35 @@ export default function CreateAccount({history}) {
                 ULTRA
             </NavLogo>
             <FormContainer>
-                <FormText>create new account</FormText>
+                <NoteButton color="skyblue">Create Account with Twitter</NoteButton>
+                <NoteButton color="darkBlue">Create Account with Facebook</NoteButton>
+                <NoteButton color="royalBlue">Create Account with Linkedin</NoteButton>
+
+                <FormText margin="2%">or</FormText>
                 <Form>
-                    {console.log(values)}
+                    
                     <NoteInput 
-                    placeholder='First Name'
-                    id='firstName'
-                    type='text'
-                    onChange={handleChange}
-                    value={values.firstName}
-                    />
-                    <NoteInput 
-                    placeholder='Last Name'
-                    id='lastName'
-                    type='text'
-                    value={values.lastName}
-                    onChange={handleChange}
-                    />
-                    <NoteInput 
-                    placeholder='Email'
+                    placeholder='Your Email Address'
                     id='email'
                     type='text'
-                    value={values.email}
+                    required
+                    value={data.email}
+                    onChange={handleChange}
                     />
                     <NoteInput 
-                    placeholder='Password'
+                    placeholder='Your Password'
                     id='password'
                     type='password'
                     onChange={handleChange}
-                    value={values.password}
+                    value={data.password}
                     />
-                     <NoteInput 
-                    placeholder='Confirm Password'
-                    id='confirmPassword'
-                    type='password'
-                    value={values.confirmPassword}
-                    onChange={handleChange}
-                    />
-                    <NoteButton onClick={handleSubmit}>
+                     
+                    <NoteButton color="#0F52BA" onClick={ e => (history.push("/login"))}>
                         Create Account
                     </NoteButton>
                 </Form>
+                <FormText font=".9rem">Have an account?</FormText>
+                <FooterLink to="/login"><FormText font="1rem">Sign in</FormText></FooterLink>
             </FormContainer>
         </AccountContainer>
     )

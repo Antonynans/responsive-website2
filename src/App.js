@@ -1,14 +1,15 @@
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import GlobalStyle from './globalStyles/GlobalStyles';
 import Home from './pages/homePage/Home';
-import { Footer } from './components';
+// import { Footer } from './components';
 import ScrollToTop from './components/ScrollToTop';
 import Products from './pages/products/Products';
 import SignUp from './pages/signUp/SignUp';
 import Services from './pages/services/Services';
 import CreateAccount from './pages/createAccount/CreateAccount';
-import Navbar from './components/Navbar/Navbar';
+// import Navbar from './components/Navbar/Navbar';
 import ScrollArrow from './pages/ScrollToTop';
+import Login from './pages/createAccount/Login';
 
 function App() {
   return (
@@ -22,7 +23,8 @@ function App() {
           <Route path='/services' exact component={Services} />
           <Route path='/products' exact component={Products} />
           <Route path='/sign-up' exact component={SignUp} />
-          <CreateAccount />
+          <Route path='/create-account' exact component={CreateAccount} />
+          <Route path='/login' exact component={Login} />
 
         </Switch>
         {/* <Footer /> */}

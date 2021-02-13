@@ -19,7 +19,7 @@ export const FormContainer = styled.div`
     padding: 5%;
     padding-top: 3%;
     border-radius: 3px;
-    margin-top: 10%;
+    margin-top: 9%;
     margin-left: 30%;
     position: fixed;
     
@@ -35,11 +35,12 @@ export const Form = styled.div`
 `;
 
 export const FormText = styled.p`
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
     letter-spacing: 1px;
-    font-size: 1.2rem;
-    margin-bottom: 6%;
-    font-weight: 500;
+    font-size: ${({font}) => font? font: "1.2rem"};
+    margin: ${({margin})=> margin? margin: 0};
+    text-align: ${({align}) => align?align:"center"};
+    /* font-weight: 500; */
 `
 
 export const NavIcon = styled(FaMagento)`
@@ -61,8 +62,12 @@ export const NavLogo = styled(Link)`
         @media screen and (max-width: 768px){
             margin: 5% 0 0 25%;
         }
-    
 `;
+
+export const FooterLink = styled(Link)`
+    text-decoration: none;
+    color: ${({color}) => color?color:'#0F52BA'};
+`
 
 export const NoteInput = styled.input`
     width: 100%;
@@ -71,19 +76,22 @@ export const NoteInput = styled.input`
     border-radius: 5px;
     border: 2px solid gray;
     box-sizing: border-box;
+    margin-bottom: 5%;
 `
 
 export const NoteButton = styled.button`
     width: 100%;
-    height: 3.5rem;
+    height: 3.2rem;
     font-size: 16px;    
-    color: #bb2323;
-    background-color: gray;
+    color: #fff;
+    /* background-color: gray; */
+    background-color: ${({color})=> color?color: "#000"};
     border-radius: 5px;
-
+    margin-bottom: 5%;
     cursor: pointer;
 
-    &hover{
+    &:hover{
         background-color: #A54302; 
+        transition: all 0.3s ease;
     }
 `
