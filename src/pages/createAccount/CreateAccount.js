@@ -17,18 +17,6 @@ export default function CreateAccount({history}) {
             [e.target.id]: e.target.value
         });
     }
-
-    // const handleSubmit = (e) => {
-    //     e.preventDefault();
-    //     history.push("/login");
-
-    //     const email = data.email.length > 0;
-    //     const password = data.password.length > 0;
-    //     const confirmPassword = data.confirmPassword.length > 0;
-    //     if (password === confirmPassword) {
-    //         alert('Welcome')
-    //     }
-    // }
     
     
     return (

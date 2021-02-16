@@ -16,15 +16,12 @@ export default function Login() {
                     id='email'
                     type='text'
                     required
-                    // value={data.email}
-                    // onChange={handleChange}
+                    
                     />
                     <NoteInput 
                     placeholder='Your Password'
                     id='password'
                     type='password'
-                    // onChange={handleChange}
-                    // value={data.password}
                     />
                     <FooterLink to="/#"><FormText margin="0 0 5% 0" align="right" font="1rem">Forgot password?</FormText></FooterLink>
 
