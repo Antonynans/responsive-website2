@@ -6,26 +6,45 @@ import { Link } from 'react-router-dom';
 
 export const AccountContainer = styled.div`
     display: flex;
+    flex-flow: column nowrap;
+
     background-color: #242424;
-    min-height: 100vh;
+    /* min-height: auto; */
+    width: 100%;
+    height: 100vh;
+    /* margin: auto; */
+    /* margin-top: 2%; */
 
     /* ${Container} */
+
+    @media screen and (max-width: 360px){
+        /* height: 100vh; */
+        height: 34rem;
+    }
 `;
 
 export const FormContainer = styled.div`
+    /* display: flex;
+    flex-flow: column nowrap; */
     background-color: white;
     height: auto;
-    width: 400px;
+    width: 50%;
     padding: 5%;
     padding-top: 3%;
     border-radius: 3px;
-    margin-top: 9%;
-    margin-left: 30%;
-    position: fixed;
+    /* justify-content: center; */
+    /* justify-content: center;
+    align-items: center;
+    text-align: center; */
+    /* margin-left: 30%; */
+    margin: auto;
+    margin-top: 2%;
+    /* position: relative; */
     
-        @media screen and (max-width: 768px){
+        @media screen and (max-width: 600px){
             width: auto;
-            margin: 20% 2% 2% 2%;
+            margin: 5%;
+            margin-top: 10%;
         }
 
 `;
@@ -50,17 +69,18 @@ export const NavIcon = styled(FaMagento)`
 
 export const NavLogo = styled(Link)`
     color: #fff;
-    justify-self: flex-start;
+    /* justify-self: flex-start; */
     cursor: pointer;
     text-decoration: none;
     font-size: 2rem;
     display: flex;
     align-items: center;
-    margin: 5% 0 0 40%;
+    justify-content: center;
+    margin: 2% 0 0 0%;
     height: 0%;
     
-        @media screen and (max-width: 768px){
-            margin: 5% 0 0 25%;
+        @media screen and (max-width: 600px){
+            margin: 5% 0 0 0%;
         }
 `;
 
