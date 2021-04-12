@@ -18,12 +18,12 @@ export default function Login() {
                     required
                     
                     />
-                    <NoteInput 
+                    <NoteInput register
                     placeholder='Your Password'
                     id='password'
                     type='password'
                     />
-                    <FooterLink to="/#"><FormText margin="0 0 5% 0" align="right" font="1rem">Forgot password?</FormText></FooterLink>
+                    <FooterLink to="##"><FormText margin="0 0 5% 0" align="right" font="1rem">Forgot password?</FormText></FooterLink>
 
                     <NoteButton color="#0F52BA">
                         Login
