@@ -29,7 +29,7 @@ export default function Login() {
                         Login
                     </NoteButton>
                 </Form>
-                <FormText font=".8rem">Or Sign Up Using</FormText>
+                <FooterLink to="/create-account"><FormText margin="0 0 5% 0" align="right" font="1rem">Already registered?</FormText></FooterLink>
             </FormContainer>
         </AccountContainer>
     )
